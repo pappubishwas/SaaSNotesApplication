@@ -26,6 +26,9 @@ async function start() {
   app.use(morgan('dev'));
   app.use(bodyParser.json());
 
+app.get("/", (req, res) => {
+  res.send("API working");
+});
 
   app.get('/health', (req, res) => res.json({ status: 'ok' }));
 
